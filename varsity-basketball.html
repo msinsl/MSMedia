@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery Access</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f6f6f6;
+      padding: 40px;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      max-width: 420px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+    input {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #link {
+      display: none;
+      margin-top: 20px;
+    }
+    .error {
+      color: #c0392b;
+      margin-top: 10px;
+      display: none;
+    }
+    a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
 
+<div class="box">
+  <h2>Enter Password</h2>
+  <input type="password" id="pw" placeholder="Password">
+  <button onclick="check()">Unlock Gallery</button>
+
+  <div class="error" id="error">Incorrect password</div>
+
+  <div id="link">
+    <p>Access granted:</p>
+    <a href="https://adobe.ly/4rr4dNi"
+       target="_blank">
+      View Photos
+    </a>
+  </div>
+</div>
+
+<script>
+  const PASSWORD = "warriors2026";  // CHANGE THIS
+
+  function check() {
+    const input = document.getElementById("pw").value;
+    if (input === PASSWORD) {
+      document.getElementById("link").style.display = "block";
+      document.getElementById("error").style.display = "none";
+    } else {
+      document.getElementById("error").style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>
